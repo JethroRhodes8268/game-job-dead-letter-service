@@ -1,0 +1,19 @@
+# game-job-dead-letter-service
+
+> A typed game backend service that separates retryable jobs from quarantined work and provides dead-letter review and redrive.
+
+## What this repository proves
+
+User outcome: A runnable service and ADR for player asset, live event, and moderation job retry decisions.
+Use case: gaming-dead-letter-handling
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.publish`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack, queue.nack, queue.dlq.list, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `test/game_job_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt

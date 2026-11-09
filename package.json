@@ -1,0 +1,22 @@
+{
+  "name": "game-job-dead-letter-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/game_backend_service.ts serve",
+    "worker": "tsx src/game_backend_service.ts worker",
+    "dlq:list": "tsx src/game_backend_service.ts dlq",
+    "dlq:redrive": "tsx src/game_backend_service.ts redrive",
+    "test": "tsx --test test/game_job_policy.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
